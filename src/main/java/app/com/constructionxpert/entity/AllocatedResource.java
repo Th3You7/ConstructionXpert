@@ -1,9 +1,16 @@
 package app.com.constructionxpert.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class AllocatedResource {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,36 +22,4 @@ public class AllocatedResource {
     @ManyToOne
     @JoinColumn(name = "resourceId")
     private Resource resource;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Task getTask() {
-        return task;
-    }
-
-    public void setTask(Task task) {
-        this.task = task;
-    }
-
-    public Resource getResource() {
-        return resource;
-    }
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-    }
 }

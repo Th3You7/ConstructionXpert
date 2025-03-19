@@ -10,8 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/enums/EmployerRole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Assignment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +32,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,29 +61,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Server.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;entity&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Desktop/briefs/ConstructionXpert/src/main/webapp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.5494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Server.executor": "Run",
+    "Tomcat Server.Tomcat 11.0.2.executor": "Run",
+    "git-widget-placeholder": "dtos",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pc/Desktop/briefs/ConstructionXpert/src/main/webapp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5494253",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\resources" />
@@ -169,5 +179,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="unstash" />
+    <option name="LAST_COMMIT_MESSAGE" value="unstash" />
   </component>
 </project>
