@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +60,7 @@
     "Tomcat Server.Tomcat 11.0.2.executor": "Run",
     "git-widget-placeholder": "doas",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/pc/Desktop/briefs/ConstructionXpert/src/main/webapp",
+    "last_opened_file_path": "C:/Users/pc/Desktop/briefs/ConstructionXpert/src/main/java/app/com/constructionxpert/exception",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +74,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\java\app\com\constructionxpert\exception" />
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\resources" />
     </key>
   </component>
@@ -164,7 +163,7 @@
       <workItem from="1742339301535" duration="1686000" />
       <workItem from="1742342010040" duration="4632000" />
       <workItem from="1742384928163" duration="4783000" />
-      <workItem from="1742465183145" duration="364000" />
+      <workItem from="1742465183145" duration="2330000" />
     </task>
     <servers />
   </component>
