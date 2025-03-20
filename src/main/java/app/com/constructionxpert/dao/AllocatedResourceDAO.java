@@ -52,6 +52,17 @@ public class AllocatedResourceDAO {
         }
     }
 
+    public void deleteAllocatedResource(long id) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
+            AllocatedResource allocatedResource = session.find(AllocatedResource.class, id);
+            if (allocatedResource != null) {
+                session.remove(allocatedResource);
+                tx.commit();
+            }
+        }
+    }
+
     public long getAllocatedResourceCount() {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             return session.createQuery("select count(*) from AllocatedResource", Long.class).uniqueResult();
