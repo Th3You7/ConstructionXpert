@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/AllocatedResourceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/AllocatedResourceDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +60,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Smart Tomcat.Server.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;doas&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;conceptions&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Desktop/briefs/ConstructionXpert/src/main/java/app/com/constructionxpert/exception&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Desktop/briefs/ConstructionXpert/conceptions&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,6 +76,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\conceptions" />
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\java\app\com\constructionxpert\exception" />
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\resources" />
     </key>
@@ -167,6 +167,8 @@
       <workItem from="1742342010040" duration="4632000" />
       <workItem from="1742384928163" duration="4783000" />
       <workItem from="1742465183145" duration="5403000" />
+      <workItem from="1742566480842" duration="1734000" />
+      <workItem from="1742669200966" duration="205000" />
     </task>
     <servers />
   </component>
