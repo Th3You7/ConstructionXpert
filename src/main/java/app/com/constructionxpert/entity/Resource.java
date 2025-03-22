@@ -17,6 +17,7 @@ public class Resource  {
     private String name;
     private String description;
     private ResourceType type;
+    private long size;
     @ManyToOne
     @JoinColumn(name = "supplierId")
     Supplier supplier;

@@ -14,5 +14,6 @@ public class ResourceDTO {
     private String description;
     private ResourceType type;
     private UserDTO supplier;
+    private long size;
 
 }
