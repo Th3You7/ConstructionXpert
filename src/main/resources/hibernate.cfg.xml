@@ -6,7 +6,7 @@
     <session-factory>
 
         <property name="hibernate.connection.driver_class" >com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sportflowdb</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/constructionxpertdb</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">th3you78</property>
 
@@ -20,13 +20,15 @@
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- Annotated entity classes -->
-<!--        <mapping class="app.com.sportflow.entity.User" />-->
-<!--        <mapping class="app.com.sportflow.entity.Member" />-->
-<!--        <mapping class="app.com.sportflow.entity.Trainer" />-->
-<!--        <mapping class="app.com.sportflow.entity.Admin" />-->
-<!--        <mapping class="app.com.sportflow.entity.TrainingSession" />-->
-<!--        <mapping class="app.com.sportflow.entity.Enrollment" />-->
+        <mapping class="app.com.constructionxpert.entity.User" />
+        <mapping class="app.com.constructionxpert.entity.Admin" />
+        <mapping class="app.com.constructionxpert.entity.Supplier" />
+        <mapping class="app.com.constructionxpert.entity.Employer" />
+        <mapping class="app.com.constructionxpert.entity.Project" />
+        <mapping class="app.com.constructionxpert.entity.Task" />
+        <mapping class="app.com.constructionxpert.entity.Resource" />
+        <mapping class="app.com.constructionxpert.entity.AllocatedResource" />
+        <mapping class="app.com.constructionxpert.entity.Assignment" />
 
     </session-factory>
 </hibernate-configuration>

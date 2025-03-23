@@ -17,7 +17,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 public class Employer extends User{
-    EmployerRole role;
+    EmployerRole employerRole;
     @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL, orphanRemoval = true)
     Set<Assignment> assignments;
 }
