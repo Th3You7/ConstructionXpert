@@ -18,10 +18,11 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
+    @Column(length = 500)
     private String description;
     private ProjectStatus projectStatus;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     Set<Task> tasks;
 }

@@ -25,11 +25,11 @@ public interface UserMapper {
         if(user instanceof Supplier) {
             userDTO.setRole(UserRole.SUPPLIER);
         }
-        if(user instanceof Employer && ((Employer) user).getRole() == EmployerRole.MEMBER) {
+        if(user instanceof Employer && ((Employer) user).getEmployerRole() == EmployerRole.MEMBER) {
            userDTO.setRole(UserRole.EMPLOYER_MEMBER);
         }
 
-        if(user instanceof Employer && ((Employer) user).getRole() == EmployerRole.RESPONSIBLE) {
+        if(user instanceof Employer && ((Employer) user).getEmployerRole() == EmployerRole.RESPONSIBLE) {
             userDTO.setRole(UserRole.EMPLOYER_RESPONSIBLE);
         }
 

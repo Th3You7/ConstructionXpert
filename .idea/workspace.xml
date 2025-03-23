@@ -11,6 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/Catalina/localhost/ROOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/Catalina/localhost/ROOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/Project.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Employer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Employer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/ProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/ProjectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -33,6 +44,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -60,7 +78,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Smart Tomcat.Server.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 11.0.2.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;conceptions&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;admin__projects&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/pc/Desktop/briefs/ConstructionXpert/conceptions&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -79,6 +97,9 @@
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\conceptions" />
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\java\app\com\constructionxpert\exception" />
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\webapp\WEB-INF\views\admin\project" />
     </key>
   </component>
   <component name="RunManager" selected="Smart Tomcat.Server">
@@ -184,12 +205,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java</url>
-          <line>14</line>
+          <line>16</line>
           <properties class="app.com.constructionxpert.dao.ProjectDAO" method="getProjectById">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/projects.jsp</url>
+          <line>122</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
