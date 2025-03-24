@@ -82,8 +82,8 @@ public class UserDAO {
 
     public Set<UserDTO> getAllUsersByName(String name) {
         try (Session session = HibernateConfig.getSessionFactory().openSession()) {
-            return session.createQuery("FROM User u where u.firstName like ':name%' OR u.lastName like ':name%'", User.class)
-                    .setParameter("name", name)
+            return session.createQuery("FROM User u where u.firstName like :name OR u.lastName like :name AND type(u) != Admin ", User.class)
+                    .setParameter("name", "%" + name.trim() + "%")
                     .getResultList()
                     .stream()
                     .map(UserMapper.INSTANCE::toDTO)
@@ -100,6 +100,25 @@ public class UserDAO {
                     .map(UserMapper.INSTANCE::toDTO)
                     .collect(Collectors.toSet());
 
+        }
+    }
+
+    public Set<UserDTO> getUsersExceptAdmin() {
+        try (Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("FROM User u WHERE type(u) != Admin ", User.class)
+                    .getResultList()
+                    .stream()
+                    .map(UserMapper.INSTANCE::toDTO)
+                    .collect(Collectors.toSet());
+
+        }
+    }
+
+    public Set<Object[]> getUsersCountGroupedByRole(){
+        try (Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select type(u), count(*) from User u group by type(u)", Object[].class)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
         }
     }
 

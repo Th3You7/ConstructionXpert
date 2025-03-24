@@ -77,7 +77,6 @@ public class TaskService {
             System.out.println(e);
             response.sendRedirect("list.jsp");
         }
-        System.out.println("updateTaskForm");
     }
 
     public void updateTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

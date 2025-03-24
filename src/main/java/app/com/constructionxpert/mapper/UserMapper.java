@@ -12,7 +12,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
-import java.lang.reflect.Member;
 
 @Mapper
 public interface UserMapper {
