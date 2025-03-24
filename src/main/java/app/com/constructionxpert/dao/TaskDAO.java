@@ -1,8 +1,11 @@
 package app.com.constructionxpert.dao;
 
 import app.com.constructionxpert.config.HibernateConfig;
+import app.com.constructionxpert.dtos.ProjectDTO;
 import app.com.constructionxpert.dtos.TaskDTO;
+import app.com.constructionxpert.entity.Project;
 import app.com.constructionxpert.entity.Task;
+import app.com.constructionxpert.mapper.ProjectMapper;
 import app.com.constructionxpert.mapper.TaskMapper;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -28,7 +31,13 @@ public class TaskDAO {
         }
     }
 
-
+    public void addTask(Task task) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
+            session.persist(task);
+            tx.commit();
+        }
+    }
 
     public Set<TaskDTO> getTasksByProject(String projectId) {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
@@ -72,9 +81,31 @@ public class TaskDAO {
             Transaction tx = session.beginTransaction();
             Task task = session.find(Task.class, id);
             if (task != null) {
+                Project project = task.getProject();
+                if (project != null) {
+                    project.getTasks().remove(task); // Trigger orphanRemoval
+                }
                 session.remove(task);
                 tx.commit();
             }
+        }
+    }
+
+    public Set<TaskDTO> searchProjectByName(String name) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return  session.createQuery("from Task where title like :name", Task.class)
+                    .setParameter("name", "%" + name.trim() + "%")
+                    .getResultStream()
+                    .map(TaskMapper.INSTANCE::toDTO)
+                    .collect(Collectors.toSet());
+        }
+    }
+
+    public Set<Object[]> getTaskCountGroupedByStatus() {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select t.status, count(t) from Task t group by t.status", Object[].class)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
         }
     }
 

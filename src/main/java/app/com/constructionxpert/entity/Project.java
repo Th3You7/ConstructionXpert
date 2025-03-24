@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -24,5 +25,5 @@ public class Project {
     private LocalDate startDate;
     private LocalDate endDate;
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    Set<Task> tasks;
+    Set<Task> tasks = new HashSet<>();
 }

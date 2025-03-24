@@ -26,12 +26,13 @@
                                 class="flex flex-wrap justify-between items-center gap-4 p-6 border-b border-gray-100"
                         >
                             <h2 class="text-2xl font-bold text-[#0c0726] basis-full">
-                                Project&nbsp;&nbsp;&gt;&nbsp;&nbsp;Add Form
+                                Project&nbsp;&nbsp;&gt;&nbsp;&nbsp;<c:if test="${requestScope.project == null}">Add</c:if><c:if test="${requestScope.project != null}">Edit</c:if> Form
+
                             </h2>
                             <c:if test="${requestScope.project != null}">
                                 <form
                                         class="flex flex-col max-w-[500px] w-[500px] mx-auto my-[32px] items-start justify-center"
-                                        action="edit-project"
+                                        action="edit"
                                         method="post"
                                 >
                                     <input hidden="hidden" name="id" value="${requestScope.project.id}">
@@ -39,7 +40,7 @@
                             <c:if test="${requestScope.project == null}">
                                 <form
                                         class="flex flex-col max-w-[500px] w-[500px] mx-auto my-[32px] items-start justify-center"
-                                        action="add-project"
+                                        action="add"
                                         method="post"
                                 >
                             </c:if>

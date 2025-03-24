@@ -36,13 +36,13 @@
                                 <div
                                         class="[font-family:'Inter',Helvetica] font-normal text-[#0c0726] text-2xl"
                                 >
-                                    <c:out value="${card.status}" />
+                                    <c:out value="${card.projectStatus}" />
                                 </div>
                                 <div
                                         class="w-8 h-8 rounded-[40px] flex items-center justify-center"
                                         style="background-color: <c:out value="${card.color}" />"
                                 >
-                                    <i class="fas fa-spinner text-white"></i>
+                                    <i class="<c:out value="${card.icon}" /> text-white"></i>
                                 </div>
                             </div>
                         <div
@@ -64,7 +64,7 @@
                     <h2 class="text-2xl font-bold text-[#0c0726]">All Projects <span class="text-[#0c072665]">(${fn:length(requestScope.projects)})</span></h2>
                     <div class="flex items-center gap-4">
                         <div class="relative">
-                            <form method="post" action="search-projects">
+                            <form method="post" action="search">
                                 <input
                                         name="name"
                                         type="text"
@@ -83,7 +83,7 @@
                                 class="w-10 h-10 flex items-center justify-center bg-white rounded-full border border-gray-200 hover:bg-gray-50"
 
                         >
-                            <a href="add-project.jsp">
+                            <a href="add.jsp">
 
                              <i class="fas fa-plus text-gray-600"></i>
                             </a>
