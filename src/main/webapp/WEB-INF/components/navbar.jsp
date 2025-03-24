@@ -22,14 +22,14 @@
             <button
                     class="w-[60px] h-[60px] flex items-center justify-center bg-white rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
             >
-                <a href="projects.jsp">
+                <a href="dashboard.jsp">
                     <i class="fas fa-home text-xl text-gray-700"></i>
                 </a>
             </button>
             <button
                     class="w-[60px] h-[60px] flex items-center justify-center bg-white rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
             >
-                <a href="projects.jsp">
+                <a href="/project/list.jsp">
                     <i class="fas fa-folder text-xl text-gray-700"></i>
                 </a>
 
@@ -37,15 +37,15 @@
             <button
                     class="w-[60px] h-[60px] flex items-center justify-center bg-white rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
             >
-                <a href="projects.jsp">
+                <a href="/stuff/list.jsp">
                     <i class="fas fa-users text-xl text-gray-700"></i>
                 </a>
             </button>
             <button
                     class="w-[60px] h-[60px] flex items-center justify-center bg-white rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
             >
-                <a href="projects.jsp">
-                    <i class="fas fa-home text-xl text-gray-700"></i>
+                <a href="/task/list.jsp">
+                    <i class="fa-solid fa-thumbtack text-xl text-gray-700"></i>
                 </a>
             </button>
             <button

@@ -1,9 +1,10 @@
 package app.com.constructionxpert.util;
 
 import app.com.constructionxpert.enums.ProjectStatus;
+import app.com.constructionxpert.enums.TaskStatus;
 
-public class CardUtil {
-    public static String getColor(ProjectStatus status) {
+public class TaskCardUtil {
+    public static String getColor(TaskStatus status) {
         String color = "";
         switch (status) {
             case COMPLETED:
@@ -13,16 +14,11 @@ public class CardUtil {
             case IN_PROGRESS:
                 color = "#f58653";
                 break;
-
-            case ON_HOLD:
-                color = "#94c21f";
-                break;
-
-            case CANCELLED:
+            case CANCELED:
                 color = "#fc5656";
                 break;
 
-            case PLANNING:
+            case PENDING:
                 color = "#3e2d9b";
                 break;
         }
@@ -32,7 +28,7 @@ public class CardUtil {
 
 
     }
-    public static String getIcon(ProjectStatus status) {
+    public static String getIcon(TaskStatus status) {
 
 
         String icon = "";
@@ -45,15 +41,11 @@ public class CardUtil {
                 icon = "fas fa-spinner";
                 break;
 
-            case ON_HOLD:
-                icon = "fas fa-pause-circle";
-                break;
-
-            case CANCELLED:
+            case CANCELED:
                 icon = "fas fa-times-circle";
                 break;
 
-            case PLANNING:
+            case PENDING:
                 icon = "fas fa-clipboard-list";
                 break;
         }

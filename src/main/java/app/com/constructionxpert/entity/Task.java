@@ -21,7 +21,7 @@ public class Task {
     private TaskStatus status;
     private LocalDate startDate;
     private LocalDate endDate;
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Assignment> assignments;
     @ManyToOne()
     @JoinColumn(name = "projectId")

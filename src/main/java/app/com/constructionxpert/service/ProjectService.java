@@ -5,8 +5,8 @@ import app.com.constructionxpert.dtos.ProjectDTO;
 import app.com.constructionxpert.entity.Project;
 import app.com.constructionxpert.enums.ProjectStatus;
 import app.com.constructionxpert.mapper.ProjectMapper;
-import app.com.constructionxpert.util.CardUtil;
-import app.com.constructionxpert.util.ProjectCard;
+import app.com.constructionxpert.util.ProjectCardUtil;
+import app.com.constructionxpert.util.Card;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AdminService {
+public class ProjectService {
     ProjectDAO projectDAO = new ProjectDAO();
 
     public void addProjectForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class AdminService {
            request.setAttribute("project", project);
            request.getRequestDispatcher("/WEB-INF/views/admin/project/form.jsp").forward(request, response);
         }catch (Exception e) {
-            System.out.println(e);
+            response.sendRedirect("list.jsp");
         }
     }
     public void addProject(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -56,7 +56,7 @@ public class AdminService {
             session.setAttribute("message", "Error adding project");
             session.setAttribute("type", "error");
         }finally {
-            response.sendRedirect("projects.jsp");
+            response.sendRedirect("list.jsp");
         }
     }
     public void editProject(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -84,7 +84,7 @@ public class AdminService {
             session.setAttribute("message", "Error updating project");
             session.setAttribute("type", "error");
         }finally {
-            response.sendRedirect("projects.jsp");
+            response.sendRedirect("list.jsp");
         }
 
 
@@ -100,11 +100,11 @@ public class AdminService {
             session.setAttribute("message", "Something went wrong");
             session.setAttribute("type", "error");
         }finally {
-            response.sendRedirect("projects.jsp");
+            response.sendRedirect("list.jsp");
         }
     }
     public void listProjects(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Set<ProjectCard> cards = new HashSet<>();
+        Set<Card> cards = new HashSet<>();
         try {
             Set<ProjectDTO> projects = projectDAO.getAllProjects();
             Set<Object[]> cardsSet = projectDAO.getProjectCountGroupedByStatus();
@@ -113,7 +113,7 @@ public class AdminService {
                 ProjectStatus status = (ProjectStatus) cardArr[0];
                 long count = (Long) cardArr[1];
 
-                ProjectCard card = new ProjectCard(CardUtil.getColor(status), status, count, CardUtil.getIcon(status));
+                Card card = new Card(ProjectCardUtil.getColor(status), status, count, ProjectCardUtil.getIcon(status));
 
                 cards.add(card);
             }
@@ -129,7 +129,7 @@ public class AdminService {
         }
     }
     public void searchProjects(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Set<ProjectCard> cards = new HashSet<>();
+        Set<Card> cards = new HashSet<>();
         String name = request.getParameter("name");
         try {
             Set<ProjectDTO> projects = projectDAO.searchProjectsByName(name);
@@ -139,7 +139,7 @@ public class AdminService {
                 ProjectStatus status = (ProjectStatus) cardArr[0];
                 long count = (Long) cardArr[1];
 
-                ProjectCard card = new ProjectCard(CardUtil.getColor(status), status, count, CardUtil.getIcon(status));
+                Card card = new Card(ProjectCardUtil.getColor(status), status, count, ProjectCardUtil.getIcon(status));
 
                 cards.add(card);
             }
@@ -154,4 +154,5 @@ public class AdminService {
 
         }
     }
+
 }
