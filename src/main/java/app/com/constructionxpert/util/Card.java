@@ -2,6 +2,7 @@ package app.com.constructionxpert.util;
 
 import app.com.constructionxpert.entity.User;
 import app.com.constructionxpert.enums.ProjectStatus;
+import app.com.constructionxpert.enums.ResourceType;
 import app.com.constructionxpert.enums.TaskStatus;
 import app.com.constructionxpert.enums.UserRole;
 import lombok.Getter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 public class Card {
     private ProjectStatus projectStatus;
     private TaskStatus taskStatus;
+    private ResourceType resourceType;
     private long count;
     private String color;
     private String icon;
@@ -34,6 +36,11 @@ public class Card {
     public Card(String color, UserRole role, long count) {
         this.color = color;
         this.role = role;
+        this.count = count;
+    }
+
+    public Card(ResourceType resourceType, long count) {
+        this.resourceType = resourceType;
         this.count = count;
     }
 

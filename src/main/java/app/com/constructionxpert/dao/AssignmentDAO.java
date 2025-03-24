@@ -18,11 +18,11 @@ public class AssignmentDAO {
         }
     }
 
-    public Set<AssignmentDTO> getAssignments() {
+    public Set<Assignment> getAssignments() {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             return session.createQuery("from Assignment", Assignment.class)
                     .getResultStream()
-                    .map(AssignmentMapper.INSTANCE::toDto)
+                   // .map(AssignmentMapper.INSTANCE::toDto)
                     .collect(Collectors.toSet());
         }
     }
