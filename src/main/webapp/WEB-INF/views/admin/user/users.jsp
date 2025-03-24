@@ -52,6 +52,18 @@
                             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 w-full"
                     >
                         <c:forEach var="card" items="${requestScope.cards}" >
+                            <c:set var="role" value="Responsible" />
+                            <c:choose>
+                                <c:when test="${card.role == 'SUPPLIER'}">
+                                    <c:set var="role" value="Supplier" />
+                                </c:when>
+                                <c:when test="${card.role == 'EMPLOYER_RESPONSIBLE'}">
+                                    <c:set var="role" value="Responsible" />
+                                </c:when>
+                                <c:when test="${card.role == 'EMPLOYER_MEMBER'}">
+                                    <c:set var="role" value="Member" />
+                                </c:when>
+                            </c:choose>
                             <div
                                     class="flex flex-col bg-white rounded-2xl p-6 transition-transform hover:transform hover:scale-105"
                             >
@@ -59,7 +71,7 @@
                                     <div
                                             class="[font-family:'Inter',Helvetica] font-normal text-[#0c0726] text-2xl"
                                     >
-                                        <c:out value="${card.role}" />
+                                        <c:out value="${role}" />
                                     </div>
                                     <div
                                             class="w-8 h-8 rounded-[40px] flex items-center justify-center"
@@ -115,20 +127,27 @@
                                 <c:forEach var="user" items="${requestScope.users}">
                                     <c:set var="roleColor" value="#3e2d9b"/>
                                     <c:set var="bgColor" value="#f4f3f9"/>
+                                    <c:set var="role" value="Member" />
                                     <c:choose>
                                         <c:when test="${user.role == 'EMPLOYER_MEMBER'}">
                                             <c:set var="roleColor" value="#3e2d9b" />
                                             <c:set var="bgColor" value="#f4f3f9"/>
+                                            <c:set var="role" value="Member" />
+
                                         </c:when>
                                         <c:when test="${user.role == 'EMPLOYER_RESPONSIBLE'}">
 
                                             <c:set var="roleColor" value="#f58653" />
                                             <c:set var="bgColor" value="#fff5f0" />
+                                            <c:set var="role" value="Responsible" />
+
                                         </c:when>
                                         <c:when test="${user.role == 'SUPPLIER'}">
 
                                             <c:set var="roleColor" value="#46a977"/>
                                             <c:set var="bgColor" value="#f0f7f4"/>
+                                            <c:set var="role" value="Supplier" />
+
                                         </c:when>
                                     </c:choose>
 
@@ -154,7 +173,7 @@
                                                           class="w-1.5 h-1.5 rounded-full mr-2"
                                                           style="background-color: <c:out value="${roleColor}" />"
                                                   ></span>
-                                                     <c:out value="${user.role}" />
+                                                     <c:out value="${role}" />
                                             </span>
                                             </div>
                                         </div>

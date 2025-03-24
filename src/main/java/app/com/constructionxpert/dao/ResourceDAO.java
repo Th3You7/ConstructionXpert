@@ -28,6 +28,15 @@ public class ResourceDAO {
         }
     }
 
+    public Set<Object[]> getAssignementCountGroupedByType() {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select a.type, count(a) from Resource a group by a.type", Object[].class)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
+        }
+
+    }
+
     public void addResource(Resource resource) {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             Transaction tx = session.beginTransaction();
