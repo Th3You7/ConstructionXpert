@@ -156,7 +156,7 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-6 text-sm font-medium text-[#0c0726]">
-                                        <c:out value="${assignment.employer.task.title}" />
+                                        <c:out value="${assignment.task.title}" />
                                     </td>
                                     <td class="py-4 px-6 text-sm text-gray-600">
                                         <c:out value="${assignment.startDate}" />

@@ -3,6 +3,7 @@ package app.com.constructionxpert.dao;
 import app.com.constructionxpert.config.HibernateConfig;
 import app.com.constructionxpert.dtos.AllocatedResourceDTO;
 import app.com.constructionxpert.entity.AllocatedResource;
+import app.com.constructionxpert.enums.ResourceType;
 import app.com.constructionxpert.mapper.AllocatedResourceMapper;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -66,6 +67,22 @@ public class AllocatedResourceDAO {
     public long getAllocatedResourceCount() {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             return session.createQuery("select count(*) from AllocatedResource", Long.class).uniqueResult();
+        }
+    }
+    public Set<AllocatedResourceDTO> getAllocatedResourcesByTaskId(long taskId) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("from AllocatedResource where task.id = :task", AllocatedResource.class)
+                    .getResultStream()
+                    .map(AllocatedResourceMapper.INSTANCE::toDTO)
+                    .collect(Collectors.toSet());
+        }
+
+    }
+    public Set<Object[]> getAllocatedResourceCountByResourceType(ResourceType resourceType) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select resource.type, count(*) from AllocatedResource group by resource.type", Object[].class)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
         }
     }
 

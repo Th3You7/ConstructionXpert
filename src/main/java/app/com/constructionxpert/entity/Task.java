@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,7 +23,9 @@ public class Task {
     private LocalDate startDate;
     private LocalDate endDate;
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Assignment> assignments;
+    private Set<Assignment> assignments = new HashSet<>();
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<AllocatedResource> allocatedResources;
     @ManyToOne()
     @JoinColumn(name = "projectId")
     private Project project;

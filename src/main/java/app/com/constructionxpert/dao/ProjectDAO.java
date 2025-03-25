@@ -1,5 +1,6 @@
 package app.com.constructionxpert.dao;
 
+import app.com.constructionxpert.entity.Employer;
 import app.com.constructionxpert.entity.Project;
 import app.com.constructionxpert.config.HibernateConfig;
 import app.com.constructionxpert.dtos.ProjectDTO;
@@ -75,6 +76,28 @@ public class ProjectDAO {
     public Set<Object[]> getProjectCountGroupedByStatus() {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             return session.createQuery("select p.projectStatus, count(p) from Project p group by p.projectStatus", Object[].class)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
+        }
+    }
+    public Set<Employer> getProjectEmployers(long projectId) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select distinct a.employer from Assignment a " +
+                            "INNER JOIN Task t on t.id = a.task.id " +
+                            "INNER join Project p on p.id = t.project.id " +
+                            "where p.id = :projectId", Employer.class)
+                    .setParameter("projectId", projectId)
+                    .getResultStream()
+                    .collect(Collectors.toSet());
+        }
+    }
+
+    public Set<Object[]> getProjectAllocatedResourcesGroupedByResourceType(long projectId) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("select distinct a.resource.type, SUM(a.size) from AllocatedResource a " +
+                    "join a.task t " +
+                    "where t.project.id = :projectId", Object[].class)
+                    .setParameter("projectId", projectId)
                     .getResultStream()
                     .collect(Collectors.toSet());
         }

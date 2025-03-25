@@ -22,11 +22,27 @@ public class TaskDAO {
         }
     }
 
+    public Task getTaskById(long id) {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.find(Task.class, id);
+
+        }
+    }
+
     public Set<TaskDTO> getAllTasks() {
         try(Session session = HibernateConfig.getSessionFactory().openSession()) {
             return session.createQuery("from Task", Task.class)
                     .getResultStream()
                     .map(TaskMapper.INSTANCE::toDTO)
+                    .collect(Collectors.toSet());
+        }
+    }
+
+    public Set<Task> getTasks() {
+        try(Session session = HibernateConfig.getSessionFactory().openSession()) {
+            return session.createQuery("from Task", Task.class)
+                    .getResultStream()
+                    //.map(TaskMapper.INSTANCE::toDTO)
                     .collect(Collectors.toSet());
         }
     }

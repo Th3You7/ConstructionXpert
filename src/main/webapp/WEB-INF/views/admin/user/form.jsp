@@ -49,28 +49,34 @@
                                     class="gap-8 self-stretch w-full flex flex-col items-start"
                             >
 
-                                    <c:if test="${requestScope.user != null}" >
 
-                                        <select
-                                            class="h-[50px] w-full px-4 py-2 bg-white rounded-[40px] text-[#7b7b7b] border border-gray-200"
-                                            name="role"  disabled>
-                                    </c:if>
-                                    <c:if test="${requestScope.user == null}">
                                     <select
                                             class="h-[50px] w-full px-4 py-2 bg-white rounded-[40px] text-[#7b7b7b] border border-gray-200"
-                                            name="role">
-                                    </c:if>
-                                    <c:forEach var="role" items="${requestScope.roles}">
-                                        <c:if test="${role == requestScope.user.role}">
-                                            <option value="<c:out value="${role}" />" selected>
+                                            name="role" >
+                                        <c:if test="${requestScope.user == null}">
+                                            <option value="<c:out value="${requestScope.type}" />" selected>
+                                                <c:out value="${requestScope.type}" />
+                                            </option>
                                         </c:if>
-                                        <c:if test="${role != requestScope.user.role}">
-                                            <option value="<c:out value="${role}" />">
+                                        <c:if test="${requestScope.user != null}">
+                                            <option value="<c:out value="${requestScope.user.role}" />" selected>
+                                                <c:out value="${requestScope.user.role}" />
+                                            </option>
                                         </c:if>
-                                        <c:out value="${role}" />
-                                        </option>
-                                    </c:forEach>
-                                </select>
+
+                                    </select>
+
+                                        <c:if test="${requestScope.type != 'SUPPLIER'}">
+                                            <select name="taskId"
+                                                    class="h-[50px] w-full px-4 py-2 bg-white rounded-[40px] text-[#7b7b7b] border border-gray-200"
+                                            >
+                                                <c:forEach var="task" items="${requestScope.tasks}">
+                                                    <option value="<c:out value="${task.id}" />">
+                                                        <c:out value="${task.title}" />
+                                                    </option>
+                                                </c:forEach>
+                                            </select>
+                                        </c:if>
 
                                 <input
                                         class="h-[50px] w-full px-4 py-2 bg-white rounded-[40px] text-[#7b7b7b] border border-gray-200"

@@ -15,6 +15,7 @@ public class AllocatedResource {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long size;
     private LocalDate createdAt;
     @ManyToOne
     @JoinColumn(name = "taskId")

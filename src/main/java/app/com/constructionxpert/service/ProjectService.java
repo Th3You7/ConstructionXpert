@@ -2,8 +2,10 @@ package app.com.constructionxpert.service;
 
 import app.com.constructionxpert.dao.ProjectDAO;
 import app.com.constructionxpert.dtos.ProjectDTO;
+import app.com.constructionxpert.entity.Employer;
 import app.com.constructionxpert.entity.Project;
 import app.com.constructionxpert.enums.ProjectStatus;
+import app.com.constructionxpert.enums.ResourceType;
 import app.com.constructionxpert.mapper.ProjectMapper;
 import app.com.constructionxpert.util.ProjectCardUtil;
 import app.com.constructionxpert.util.Card;
@@ -154,5 +156,36 @@ public class ProjectService {
 
         }
     }
+    public void getProject(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        long id = Long.parseLong(request.getParameter("id"));
+        HttpSession session = request.getSession(false);
+        Set<Card> resourceCards = new HashSet<>();
 
+
+        try {
+            ProjectDTO project = projectDAO.getProjectById(id);
+            Set<Employer> employers = projectDAO.getProjectEmployers(id);
+            //Set<Object[]> cardsSet = projectDAO.getProjectAllocatedResourcesGroupedByResourceType(id);
+            //System.out.println(cardsSet.size());
+
+//            for(Object[] row : cardsSet) {
+//                ResourceType resourceType = (ResourceType) row[0];
+//                long count = (Long) row[1];
+//
+//
+//                Card card = new Card(resourceType, count);
+//
+//                resourceCards.add(card);
+//            }
+
+
+            request.setAttribute("tasks", project.getTasks());
+            request.setAttribute("employers", employers);
+            request.setAttribute("cards", resourceCards);
+        }catch (Exception e) {
+            System.out.println("Something went wrong");
+        }finally {
+            request.getRequestDispatcher("/WEB-INF/views/admin/project/project.jsp").forward(request, response);
+        }
+    }
 }

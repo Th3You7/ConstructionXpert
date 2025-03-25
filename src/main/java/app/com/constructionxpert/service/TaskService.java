@@ -1,9 +1,13 @@
 package app.com.constructionxpert.service;
 
+import app.com.constructionxpert.dao.AllocatedResourceDAO;
 import app.com.constructionxpert.dao.ProjectDAO;
 import app.com.constructionxpert.dao.TaskDAO;
+import app.com.constructionxpert.dtos.AllocatedResourceDTO;
 import app.com.constructionxpert.dtos.ProjectDTO;
 import app.com.constructionxpert.dtos.TaskDTO;
+import app.com.constructionxpert.entity.AllocatedResource;
+import app.com.constructionxpert.entity.Assignment;
 import app.com.constructionxpert.entity.Project;
 import app.com.constructionxpert.entity.Task;
 import app.com.constructionxpert.enums.TaskStatus;
@@ -24,11 +28,13 @@ import java.util.Set;
 public class TaskService {
     TaskDAO taskDAO = new TaskDAO();
     ProjectDAO projectDAO = new ProjectDAO();
+    AllocatedResourceDAO allocatedResourceDAO = new AllocatedResourceDAO();
 
     public void addTaskForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("projects", projectDAO.getAllProjects());
         request.getRequestDispatcher("/WEB-INF/views/admin/task/form.jsp").forward(request, response);
     }
+
     public void addTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
 
@@ -140,7 +146,8 @@ public class TaskService {
         Set<Card> cards = new HashSet<>();
 
         try {
-            Set<TaskDTO> tasks = taskDAO.getAllTasks();
+            Set<Task> tasks = taskDAO.getTasks();
+
             Set<Object[]> cardsSet = taskDAO.getTaskCountGroupedByStatus();
             for(Object[] row : cardsSet) {
                 TaskStatus status = (TaskStatus) row[0];
@@ -151,6 +158,9 @@ public class TaskService {
             }
             request.setAttribute("cards", cards);
             request.setAttribute("tasks", tasks);
+            System.out.println(tasks.size());
+            System.out.println(cards.size());
+
         }catch (Exception e) {
             System.out.println("Something went wrong");
         }finally {
@@ -185,5 +195,20 @@ public class TaskService {
         }
     }
 
+    public void getTask(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        long id = Long.parseLong(request.getParameter("id"));
 
+        try {
+            Task task = taskDAO.getTaskById(id);
+            //Set<AllocatedResourceDTO> allocatedResources = allocatedResourceDAO.getAllocatedResourcesByTaskId(id);
+            request.setAttribute("task", task);
+
+           // request.setAttribute("allocatedResources", allocatedResources);
+
+        }catch (Exception e) {
+            System.out.println("Something went wrong");
+        }finally {
+            request.getRequestDispatcher("/WEB-INF/views/admin/task/task.jsp").forward(request, response);
+        }
+    }
 }
