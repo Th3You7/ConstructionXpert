@@ -11,24 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/AllocatedResourceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/AllocatedResourceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/TaskDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/TaskDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/ProjectSummaryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/ProjectSummaryDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/TaskDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/AssignmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/AssignmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/mapper/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/AllocatedResourceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/AllocatedResourceDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/DashboardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/util/UserCardUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/util/UserCardUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dashboard/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dashboard/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/task/tasks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/task/tasks.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/user/users.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/dashboard/index_jsp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/dashboard/index_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/projects.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/task/task_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/task/task_jsp.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +32,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -213,7 +205,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java</url>
-          <line>16</line>
+          <line>17</line>
           <properties class="app.com.constructionxpert.dao.ProjectDAO" method="getProjectById">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -252,6 +244,11 @@
           <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/dashboard/index.jsp</url>
           <line>176</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/project.jsp</url>
+          <line>98</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -93,23 +93,17 @@ public class DashboardService {
                 System.out.println(card.getResourceType() + " " + card.getCount());
 
                 resourceCards.add(card);
-                System.out.println(resourceCards.size());
             }
 
 //            Set<AssignmentDTO> assignments = assignmentDAO.getAssignments();
 
-            System.out.println("hellllooo 1");
             req.setAttribute("projectCards", projectCards);
             req.setAttribute("taskCards", taskCards);
             req.setAttribute("userCards", userCards);
             req.setAttribute("resourceCards", resourceCards);
             req.setAttribute("assignments", assignments);
 
-            for(Assignment assignment : assignments) {
-                System.out.println(assignment.getEmployer().getFirstName());
-                System.out.println(assignment.getTask().getProject().getTitle());
 
-            }
 
 
         }catch(Exception e) {

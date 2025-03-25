@@ -87,7 +87,6 @@ public class UserService {
         String password = req.getParameter("password");
         System.out.println(req.getParameter("role"));
         UserRole role = UserRole.valueOf(req.getParameter("role"));
-        long taskId = Long.parseLong(req.getParameter("taskId"));
 
         User user = role.equals(UserRole.SUPPLIER) ? new Supplier() : new Employer();
 
@@ -99,6 +98,8 @@ public class UserService {
         user.setUpdatedAt(LocalDateTime.now());
 
         if(user instanceof Employer) {
+            long taskId = Long.parseLong(req.getParameter("taskId"));
+
             Task task1 = taskDAO.getTaskById(taskId);
             //Task task1 = TaskMapper.INSTANCE.toEntity(task);
             Set<Assignment> assignments = new HashSet<>();

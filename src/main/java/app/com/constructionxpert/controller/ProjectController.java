@@ -50,6 +50,10 @@ public class ProjectController extends HttpServlet {
                 projectService.listProjects(req,resp);
                 break;
 
+            case "/":
+                projectService.getProject(req,resp);
+                break;
+
             default:
                 resp.sendRedirect("list.jsp");
 

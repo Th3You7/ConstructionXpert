@@ -123,7 +123,9 @@
                             <tr class="border-b border-gray-100 hover:bg-gray-50">
                                 <td class="py-4 px-6 text-sm text-gray-800"><c:out value="${project.id}" /></td>
                                 <td class="py-4 px-6 text-sm text-gray-800 font-medium">
-                                    <c:out value="${project.title}" />
+                                    <a href="/project/?id=<c:out value="${project.id}" />">
+                                        <c:out value="${project.title}" />
+                                    </a>
                                 </td>
                                 <td class="py-4 px-6">
                       <span

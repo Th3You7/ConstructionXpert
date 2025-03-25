@@ -202,14 +202,7 @@ public class TaskService {
             Task task = taskDAO.getTaskById(id);
             //Set<AllocatedResourceDTO> allocatedResources = allocatedResourceDAO.getAllocatedResourcesByTaskId(id);
             request.setAttribute("task", task);
-            for(Assignment assignment : task.getAssignments()) {
 
-            System.out.println(assignment.getEmployer().getEmployerRole());
-            System.out.println(assignment.getEmployer().getFirstName());
-
-            System.out.println(assignment.getEmployer().getFirstName());
-
-            }
            // request.setAttribute("allocatedResources", allocatedResources);
 
         }catch (Exception e) {
