@@ -7,6 +7,7 @@ import app.com.constructionxpert.dtos.UserDTO;
 import app.com.constructionxpert.entity.*;
 import app.com.constructionxpert.enums.EmployerRole;
 import app.com.constructionxpert.enums.UserRole;
+import app.com.constructionxpert.exception.UserEmailNoExistException;
 import app.com.constructionxpert.mapper.TaskMapper;
 import app.com.constructionxpert.mapper.UserMapper;
 import app.com.constructionxpert.util.Card;
@@ -239,5 +240,46 @@ public class UserService {
         }finally {
             req.getRequestDispatcher("/WEB-INF/views/admin/user/users.jsp").forward(req, res);
         }
+    }
+    public void login(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
+        HttpSession session = req.getSession();
+
+        try {
+            UserDTO user = userDAO.getUser(email, password);
+            session.setAttribute("auth", user);
+            if(user.getRole() == UserRole.EMPLOYER_MEMBER || user.getRole() == UserRole.EMPLOYER_RESPONSIBLE) {
+                res.sendRedirect("/home.jsp");
+            }
+            if(user.getRole() == UserRole.SUPPLIER) {
+                res.sendRedirect("/supplier.jsp");
+            }
+            if(user.getRole() == UserRole.ADMIN) {
+                res.sendRedirect("/dashboard.jsp");
+            }
+        }catch (UserEmailNoExistException e){
+            session.setAttribute("message", e.getMessage());
+            session.setAttribute("type", "error");
+            res.sendRedirect( "/auth/login.jsp");
+
+        }catch (Exception e) {
+            session.setAttribute("message", "Email or password is incorrect");
+            session.setAttribute("type", "error");
+            res.sendRedirect("/auth/login.jsp");
+        }
+    }
+
+    public void loginPage(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/auth/login.jsp").forward(req, res);
+    }
+
+    public void logout(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        HttpSession session = req.getSession(false);
+        if (session != null) {
+            session.invalidate();
+
+        }
+        res.sendRedirect("/auth/login.jsp");
     }
 }

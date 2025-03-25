@@ -11,16 +11,18 @@
   <component name="ChangeListManager">
     <list default="true" id="18db9e55-7673-4234-8ec1-4966477a9990" name="Changes" comment="unstash">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/ProjectDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/AllocatedResourceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dtos/AllocatedResourceDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/entity/AllocatedResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/DashboardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/DashboardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/projects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/project/projects.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/task/task_jsp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/task/task_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/components/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/dashboard/index_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/dashboard/index_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/project/form_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/project/form_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/project/projects_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/project/projects_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/user/form_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/user/form_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/user/users_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/admin/user/users_jsp.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Smart Tomcat.Server.executor": "Run",
     "Tomcat Server.Tomcat 11.0.2.executor": "Run",
-    "git-widget-placeholder": "profiles",
+    "git-widget-placeholder": "auth",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/pc/Desktop/briefs/ConstructionXpert/conceptions",
     "node.js.detected.package.eslint": "true",
@@ -100,6 +102,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pc\Desktop\briefs\ConstructionXpert\src\main\webapp\WEB-INF\views\admin\project" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="app.com.constructionxpert.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Smart Tomcat.Server">
@@ -215,7 +220,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/app/com/constructionxpert/dao/TaskDAO.java</url>
           <line>31</line>
-          <properties class="app.com.constructionxpert.dao.TaskDAO" method="getAllTasks">
+          <properties class="app.com.constructionxpert.dao.TaskDAO">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -223,7 +228,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/app/com/constructionxpert/service/UserService.java</url>
-          <line>29</line>
+          <line>30</line>
           <properties class="app.com.constructionxpert.service.UserService" method="listUsers">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
