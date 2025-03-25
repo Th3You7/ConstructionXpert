@@ -7,15 +7,15 @@ public class UserCardUtil {
     public static String getColor(UserRole role) {
         String color = "";
         switch (role) {
-            case EMPLOYER_MEMBER:
+            case EMPLOYER_RESPONSIBLE:
                 color = "#f58653";
                 break;
 
             case SUPPLIER:
-                color = "#f58653";
+                color = "#46a977";
                 break;
 
-            case EMPLOYER_RESPONSIBLE:
+            case EMPLOYER_MEMBER:
                 color = "#3e2d9b";
                 break;
         }

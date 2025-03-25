@@ -51,6 +51,10 @@ public class TaskController extends HttpServlet {
                 taskService.searchTasks(req, resp);
                 break;
 
+            case "/":
+                taskService.getTask(req, resp);
+                break;
+
 
             default:
                 resp.sendRedirect("list.jsp");

@@ -40,9 +40,11 @@ public class DashboardService {
             Set<UserDTO> users = userDAO.getUsersExceptAdmin();
             Set<Assignment> assignments = assignmentDAO.getAssignments();
 
+            System.out.println(assignments.size());
 
-            long responsibleCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_MEMBER).count();
-            long memberCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_RESPONSIBLE).count();
+
+            long responsibleCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_RESPONSIBLE).count();
+            long memberCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_MEMBER).count();
             long suppliersCount = users.stream().filter(user -> user.getRole() == UserRole.SUPPLIER).count();
 
 
@@ -96,12 +98,19 @@ public class DashboardService {
 
 //            Set<AssignmentDTO> assignments = assignmentDAO.getAssignments();
 
-
+            System.out.println("hellllooo 1");
             req.setAttribute("projectCards", projectCards);
             req.setAttribute("taskCards", taskCards);
             req.setAttribute("userCards", userCards);
             req.setAttribute("resourceCards", resourceCards);
             req.setAttribute("assignments", assignments);
+
+            for(Assignment assignment : assignments) {
+                System.out.println(assignment.getEmployer().getFirstName());
+                System.out.println(assignment.getTask().getProject().getTitle());
+
+            }
+
 
         }catch(Exception e) {
             System.out.println(e.getMessage());

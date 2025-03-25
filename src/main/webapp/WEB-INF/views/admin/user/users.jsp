@@ -108,17 +108,54 @@
                                                         class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
                                                 ></i>
                                             </button>
+
                                         </form>
 
                                     </div>
-                                    <button
-                                            class="w-10 h-10 flex items-center justify-center bg-white rounded-full border border-gray-200 hover:bg-gray-50"
+                                    <div class="relative">
 
+
+                                    <button
+                                            class="toggle w-10 h-10 flex items-center justify-center bg-white rounded-full border border-gray-200 hover:bg-gray-50"
+                                            onclick="handleToggle()"
                                     >
-                                        <a href="add.jsp">
+
                                             <i class="fas fa-plus text-gray-600"></i>
-                                        </a>
+
                                     </button>
+                                        <div class="menu hidden absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg py-2 z-10">
+                                            <c:forEach var="card" items="${requestScope.cards}" >
+                                                <c:set var="role" value="Responsible" />
+                                                <c:choose>
+                                                    <c:when test="${card.role == 'SUPPLIER'}">
+                                                        <c:set var="role" value="Supplier" />
+                                                    </c:when>
+                                                    <c:when test="${card.role == 'EMPLOYER_RESPONSIBLE'}">
+                                                        <c:set var="role" value="Responsible" />
+                                                    </c:when>
+                                                    <c:when test="${card.role == 'EMPLOYER_MEMBER'}">
+                                                        <c:set var="role" value="Member" />
+                                                    </c:when>
+                                                </c:choose>
+
+                                                <button
+
+                                                        class="w-full px-4 py-2 text-left hover:bg-gray-50 flex items-center gap-2"
+
+                                                >
+                                                    <a href="/user/add.jsp?type=<c:out value="${card.role}" />">
+                                                    <span
+                                                            class="w-2 h-2 rounded-full"
+                                                            style=" background-color: <c:out value="${card.color}" /> "
+                                                    ></span>
+                                                    <span class="text-sm text-gray-700"><c:out value="${role}" /></span>
+                                                    </a>
+                                                </button>
+
+                                            </c:forEach>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div
@@ -185,5 +222,17 @@
                     </div>
     </div>
 </main>
+<script>
+    const handleToggle = () => {
+        const btn = document.querySelector(".toggle");
+        const menu = document.querySelector(".menu");
+         btn.addEventListener("click", () => handleClick())
+
+        const handleClick = () => {
+             const classes = menu.classList;
+             classes.toggle("hidden")
+        }
+    }
+</script>
 </body>
 </html>

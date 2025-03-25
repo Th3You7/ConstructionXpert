@@ -2,12 +2,12 @@ package app.com.constructionxpert.service;
 
 import app.com.constructionxpert.dao.TaskDAO;
 import app.com.constructionxpert.dao.UserDAO;
+import app.com.constructionxpert.dtos.TaskDTO;
 import app.com.constructionxpert.dtos.UserDTO;
-import app.com.constructionxpert.entity.Employer;
-import app.com.constructionxpert.entity.Supplier;
-import app.com.constructionxpert.entity.User;
+import app.com.constructionxpert.entity.*;
 import app.com.constructionxpert.enums.EmployerRole;
 import app.com.constructionxpert.enums.UserRole;
+import app.com.constructionxpert.mapper.TaskMapper;
 import app.com.constructionxpert.mapper.UserMapper;
 import app.com.constructionxpert.util.Card;
 import app.com.constructionxpert.util.UserCardUtil;
@@ -33,8 +33,8 @@ public class UserService {
             Set<UserDTO> users = userDAO.getUsersExceptAdmin();
 
 
-            long responsibleCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_MEMBER).count();
-            long memberCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_RESPONSIBLE).count();
+            long responsibleCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_RESPONSIBLE).count();
+            long memberCount = users.stream().filter(user -> user.getRole() == UserRole.EMPLOYER_MEMBER).count();
             long suppliersCount = users.stream().filter(user -> user.getRole() == UserRole.SUPPLIER).count();
             for (UserRole role : Arrays.stream(UserRole.values()).filter(role -> role != UserRole.ADMIN).collect(Collectors.toSet())) {
                long count = 0;
@@ -85,9 +85,12 @@ public class UserService {
         String lastname = req.getParameter("lastName");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        System.out.println(req.getParameter("role"));
         UserRole role = UserRole.valueOf(req.getParameter("role"));
+        long taskId = Long.parseLong(req.getParameter("taskId"));
 
         User user = role.equals(UserRole.SUPPLIER) ? new Supplier() : new Employer();
+
         user.setFirstName(firstname);
         user.setLastName(lastname);
         user.setEmail(email);
@@ -96,8 +99,22 @@ public class UserService {
         user.setUpdatedAt(LocalDateTime.now());
 
         if(user instanceof Employer) {
+            Task task1 = taskDAO.getTaskById(taskId);
+            //Task task1 = TaskMapper.INSTANCE.toEntity(task);
+            Set<Assignment> assignments = new HashSet<>();
+
             EmployerRole employerRole = role == UserRole.EMPLOYER_MEMBER ? EmployerRole.MEMBER : EmployerRole.RESPONSIBLE;
              ((Employer) user).setEmployerRole(employerRole);
+
+             // assignment
+            Assignment assignment = new Assignment();
+            assignment.setEmployer((Employer) user);
+            assignment.setTask(task1);
+            assignment.setStartDate(task1.getStartDate());
+            assignment.setEndDate(task1.getEndDate());
+            assignments.add(assignment);
+
+            ((Employer) user).setAssignments(assignments);
         }
 
         try {
@@ -112,8 +129,10 @@ public class UserService {
         }
     }
     public void addUserForm(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String type = req.getParameter("type");
         req.setAttribute("roles", Arrays.stream(UserRole.values()).filter(role -> role != UserRole.ADMIN).collect(Collectors.toSet()));
-        req.setAttribute("tasks", taskDAO.getAllTasks());
+        req.setAttribute("tasks", taskDAO.getTasks());
+        req.setAttribute("type", type);
         req.getRequestDispatcher("/WEB-INF/views/admin/user/form.jsp").forward(req, res);
     }
     public void editUser(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

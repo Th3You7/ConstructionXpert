@@ -121,7 +121,12 @@
                                 <tr class="border-b border-gray-100 hover:bg-gray-50">
                                     <td class="py-4 px-6 text-sm text-gray-800"><c:out value="${task.id}" /></td>
                                     <td class="py-4 px-6 text-sm text-gray-800 font-medium">
-                                        <c:out value="${task.title}" />
+<%--                                        <a href="<c:out value="${task.Id}"/>">--%>
+
+<%--                                        </a>--%>
+                                        <a href="/task/?id=<c:out value="${task.id}" />">
+                                            <c:out value="${task.title}" />
+                                        </a>
                                     </td>
                                     <td class="py-4 px-6">
                       <span

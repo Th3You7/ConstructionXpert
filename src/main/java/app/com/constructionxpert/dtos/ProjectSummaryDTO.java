@@ -1,5 +1,6 @@
 package app.com.constructionxpert.dtos;
 
+import app.com.constructionxpert.enums.ProjectStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +16,6 @@ public class ProjectSummaryDTO {
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
+    private ProjectStatus projectStatus;
+
 }
